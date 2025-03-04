@@ -1,0 +1,501 @@
+/* Base Styles */
+:root {
+  --primary-color: #3a3a3a;
+  --secondary-color: #f05d23;
+  --accent-color: #2d9cdb;
+  --light-gray: #f9f9f9;
+  --medium-gray: #e0e0e0;
+  --dark-gray: #4f4f4f;
+  --white: #ffffff;
+  --black: #000000;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+/* Reset e Configurações Básicas */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  color: var(--primary-color);
+  background-color: var(--white);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Tipografia */
+h1,
+h2,
+h3,
+h4 {
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+p {
+  margin-bottom: 15px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+  transition: var(--transition);
+}
+
+ul {
+  list-style: none;
+}
+
+section {
+  padding: 80px 0;
+}
+
+/* Header Styles */
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: var(--white);
+  box-shadow: var(--shadow);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+#header-img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  object-fit: contain;
+  background-image:none;
+}
+
+/* Estilos para o texto do logo */
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.logo-sound {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.logo-mic {
+  color: var(--secondary-color);
+}
+
+.logo-shop {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--primary-color);
+  letter-spacing: 1px;
+}
+
+#nav-bar ul {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-link {
+  font-weight: 500;
+  padding: 5px 0;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: var(--secondary-color);
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--secondary-color);
+  transition: var(--transition);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+#hero {
+  background-color: #333; /* Fallback color */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("https://www.riau1.com/assets/2022/12/07/1670406730-8-rekomendasi-microphone-bagus-dan-jernih.jpg");
+  background-size: cover;
+  background-position: 50% 28%;
+  background-repeat: no-repeat;
+  color: var(--white);
+  text-align: center;
+  padding: 150px 0;
+  margin-top: 80px;
+}
+
+#hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+#hero p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 30px;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: var(--secondary-color);
+  color: var(--white);
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.cta-button:hover {
+  background-color: #d84e17;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* About Section */
+#about {
+  background-color: var(--light-gray);
+}
+
+.about-content {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-image {
+  flex: 1;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  max-height: 400px;
+  object-fit: cover;
+}
+
+/* Video Section */
+#video-section {
+  text-align: center;
+  background-color: var(--white);
+}
+
+#video-section h2 {
+  margin-bottom: 30px;
+  color: var(--primary-color);
+  font-size: 2.2rem;
+}
+
+.video-caption {
+  margin-top: 20px;
+  font-weight: 500;
+  color: var(--secondary-color);
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+  overflow: hidden;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+#video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+/* Products Section */
+#products {
+  background-color: var(--light-gray);
+}
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.product-card {
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  padding: 30px;
+  width: 280px;
+  text-align: center;
+  transition: var(--transition);
+  border: 1px solid var(--medium-gray);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 450px;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  border-color: var(--secondary-color);
+}
+
+.product-card img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  margin: 0 auto 20px;
+  border-radius: 5px;
+}
+
+.product-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-weight: 600;
+  color: var(--secondary-color);
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.product-description {
+  flex-grow: 1;
+}
+
+.product-button {
+  display: inline-block;
+  background-color: var(--secondary-color);
+  color: var(--white);
+  padding: 10px 24px;
+  border-radius: 5px;
+  font-weight: 500;
+  margin-top: 15px;
+}
+
+.product-button:hover {
+  background-color: #d84e17;
+  transform: scale(1.05);
+}
+
+/* Contact Section */
+#contact {
+  background-color: var(--white);
+  text-align: center;
+}
+
+#contact p {
+  max-width: 600px;
+  margin: 0 auto 30px;
+}
+
+.form-group {
+  display: flex;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+#email {
+  flex: 1;
+  padding: 12px 20px;
+  border: 1px solid var(--medium-gray);
+  border-radius: 30px 0 0 30px;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  outline: none;
+}
+
+#email:focus {
+  border-color: var(--secondary-color);
+}
+
+#submit {
+  background-color: var(--secondary-color);
+  color: var(--white);
+  border: none;
+  padding: 12px 25px;
+  border-radius: 0 30px 30px 0;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+#submit:hover {
+  background-color: #d84e17;
+}
+
+/* Footer */
+footer {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 60px 0 20px;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-links,
+.footer-contact {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-links h4,
+.footer-contact h4 {
+  color: var(--white);
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+.footer-links ul li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: var(--medium-gray);
+}
+
+.footer-links a:hover {
+  color: var(--white);
+}
+
+.footer-contact p {
+  color: var(--medium-gray);
+  margin-bottom: 10px;
+}
+
+.copyright {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--medium-gray);
+  font-size: 0.9rem;
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+  .about-content {
+    flex-direction: column;
+  }
+
+  #hero h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #header {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  #nav-bar {
+    margin-top: 15px;
+    width: 100%;
+  }
+
+  #nav-bar ul {
+    justify-content: center;
+    gap: 15px;
+  }
+
+  #hero {
+    padding: 120px 0;
+    margin-top: 120px;
+  }
+
+  #hero h1 {
+    font-size: 2rem;
+  }
+
+  section {
+    padding: 60px 0;
+  }
+
+  .form-group {
+    flex-direction: column;
+  }
+
+  #email {
+    border-radius: 30px;
+    margin-bottom: 10px;
+  }
+
+  #submit {
+    border-radius: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  #nav-bar ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .product-card {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
